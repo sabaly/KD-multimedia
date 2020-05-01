@@ -1,0 +1,363 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #3498db;
+}
+
+a:hover {
+  color: #5faee3;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Shadow Info Light", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  width: 100%;
+  height: 100vh;
+  transition: all 0.5s;
+  z-index: 997;
+  transition: all 0.5s;
+  background: #42455a; /*url("../img/hero_bg_1.jpg") center center*/
+  /*box-shadow: 0px 2px 15px rgba(0, 0, 255, 0.5);*/
+  background-size: cover;
+  position: relative;
+  padding: 30px;
+}
+
+#header .logo h1 {
+  font-size: 28px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+    /*---------------   # Navigation Menu --------------------------*/
+              /* Desktop Navigation */
+
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  float: left;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 12px 15px;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #3498db;
+  text-decoration: none;
+}
+.nav-menu .drop-down ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 30px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+  background: #42455a;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: ease all 0.3s;
+}
+.nav-menu .drop-down:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.nav-menu .drop-down .drop-down > a {
+  padding-right: 35px;
+}
+
+.nav-menu .drop-down .drop-down > a:after {
+  content: "\eaa0";
+  font-family: IcoFont;
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 1366px) {
+  .nav-menu .drop-down .drop-down ul {
+    left: -90%;
+  }
+  .nav-menu .drop-down .drop-down:hover > ul {
+    left: -100%;
+  }
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\ea9d";
+  }
+}
+
+
+          /*-------------- Mobile navigation --------------*/
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 20px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #fff;/*384046*/
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 80px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #42455a;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav li {
+  list-style: inline;
+}
+
+.mobile-nav a {
+  display: block;
+  width: 60%;
+  position: relative;
+  transition: 1s;
+  color: #fff;
+  padding: 0px 2px;
+  text-align: center;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  transition: 1s;
+  background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #3498db, #fff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  transition: 1s;
+  color: #3498db;
+  text-decoration: none;
+}
+.mobile-nav a:hover {
+  transition: 1s;
+  background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fff, #3498db);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.mobile-nav .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+  content: "\eaa1";
+}
+
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(33, 38, 42, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+.mobile-nav-active .mobile-nav-toggle i:active {
+  color: #f00;
+}
+
+
+    /*---------------   # Banner  --------------------------*/
+
+
+#banner {
+	padding: 120px;
+	color: #fff;
+}
+
+#banner h2 {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+
+#banner .btn-discover {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 2px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+  background: #00f;
+  text-transform: uppercase;
+}
+
+
+
+#banner .scrollto {
+	transition: 1s;
+	color: #3498db;
+	text-decoration: none;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	transition: 1s;
+	background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #3498db, #fff);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+#banner .scrollto:hover {
+	transition: 1s;
+	color: #fff;
+	transition: 1s;
+	background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fff, #3498db);
+}
+
+
+
+#banner .scrollto span {
+	padding: 0px 10px;
+}
+
+@media (max-width: 992px) {
+  #banner {
+    height: calc(100vh - 70px);
+  }
+}
+
+@media (max-width: 768px) {
+  #banner h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  #banner h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 628px) {
+  #banner {
+    padding : 10px;
+    padding-top: 130px; 
+  }
+  #banner h1 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  #banner h2 {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #banner .scrollto {
+    font-size: 15px;
+  }
+}
+		/*---------------		# frequences --------------------------*/
+
+
+.progress{
+	position: absolute;top:70%;width: 0.5%;height:30%;opacity: 0.7; 
+	filter: alpha(opacity=10);
+	bottom: 0px;
+	background: #fff;
+}
+.progress-bar{
+	position:absolute;top:0%; width: 100%;
+	border: 1px solid #42455a;
+}
+
+
+
